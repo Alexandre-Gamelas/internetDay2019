@@ -1,0 +1,118 @@
+*{
+    font-family: "Pontano Sans";
+}
+
+body{
+    overflow: hidden;
+
+}
+a:link{}
+a:hover{}
+a:active{
+    text-decoration: none;
+}
+a:focus{
+    text-decoration: none;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+
+#background{
+    background-image: url("../assets/img/fundo.jpg");
+    background-size: 1300px;
+    background-position: 40% 60%;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+footer{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.layer_preto_menu{
+    width: 100vw;
+    height: 100vh;
+
+    opacity: 0.6;
+    background-color: black;
+
+    position: absolute;
+}
+
+#logo{
+    width: 25vmin;
+    height: 25vmin;
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    background-color: #FFDB58;
+    z-index: +100;
+}
+
+.text-parcerias{
+    font-family: Poppins;
+    font-weight: bold;
+    color: black!important;
+    background-color: #FFDB58;
+    padding: 2vmin 2.5vmin 2vmin 2.5vmin;
+    border-radius: 10.497px;
+}
+
+/** index **/
+.img-provisorio{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    background-color: #FFDB58;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+#opcoes_entrada{
+    padding-top: 55vh;
+}
+
+#opcoes_entrada button{
+    font-family: 'Pontano Sans', sans-serif;
+    padding: 1.2vh 5vw 1.2vh 5vw;
+    border: 1px solid transparent;
+    border-radius: 42px;
+    width: 50vw;
+    background:  linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+
+    cursor: pointer;
+}
+
+#opcoes_entrada button a{
+    color: black!important;
+    cursor: pointer;
+
+}
+/* ENTRAR */
+.titulo-1{
+    color: #FFDB58;
+    font-family: Poppins Black;
+    font-size: 10vmin;
+}
+
+#form_entrada input{
+    background-color: #FFEBA4;
+    border: transparent;
+    border-radius: 45px;
+    padding: 2vmin 2vmin 2vmin 8vmin;
+}
+
+#submit_entrar{
+    background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+}
+
