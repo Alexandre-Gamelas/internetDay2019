@@ -1,8 +1,9 @@
 
 
 
-
-<?php $pagina="registar"?>
+<style>
+<?php include "css/navbar.css"?>
+</style>
 <nav class="navbar navbar-expand fixed-top navbar-bg  pl-0">
 
     <div class="navbar-layer-preto" ></div>
