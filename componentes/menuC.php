@@ -15,7 +15,7 @@
     <img id="perfil" class="pointer menuIcon" src="assets/img/menu/perfil.png" alt="">
     <img id="horario" class="pointer menuIcon" src="assets/img/menu/horario.png" alt="">
     <img id="mapa" class="pointer menuIcon" src="assets/img/menu/mapa.png" alt="">
-    <img id="historico" class="pointer menuIcon" src="assets/img/menu/historico.png" alt="">
+    <a href="historico.php"><img id="historico" class="pointer menuIcon" src="assets/img/menu/historico.png" alt=""></a>
     <img id="qrcode" class="pointer" src="assets/img/menu/qrcode.png" alt="">
 </div>
 

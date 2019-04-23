@@ -14,7 +14,7 @@
 
     <section class="row" id="opcoes_entrada">
         <article class="col-12 text-center animated bounceInUp">
-            <button><a href="entrar.php">ENTRAR</a></button>
+            <a href="entrar.php"><button>ENTRAR</button></a>
         </article>
 
         <article class="col-12 text-center mt-4 animated bounceInUp" style="animation-delay: 0.1s;">
