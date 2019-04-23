@@ -9,7 +9,7 @@
     <div class="navbar-layer-preto" ></div>
 
 
-    <a class="navbar-brand pl-4" href="#"> <img class="icon_back" src="assets/img/Registar/back-arrow.svg"></a>
+    <a class="navbar-brand pl-4" href="#"> <img class="icon_back" src="assets/img/navbar/back-arrow.svg"></a>
 
 
     <div class="collapse navbar-collapse" id="navbarsExample02">
