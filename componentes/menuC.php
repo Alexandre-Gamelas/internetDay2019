@@ -13,7 +13,7 @@
 
     <img id="circulo" class="pointer menuIcon" src="assets/img/menu/circulo.png" alt="">
     <img id="perfil" class="pointer menuIcon" src="assets/img/menu/perfil.png" alt="">
-    <img id="horario" class="pointer menuIcon" src="assets/img/menu/horario.png" alt="">
+    <a href="horario.php"><img id="horario" class="pointer menuIcon" src="assets/img/menu/horario.png" alt=""></a>
     <img id="mapa" class="pointer menuIcon" src="assets/img/menu/mapa.png" alt="">
     <a href="historico.php"><img id="historico" class="pointer menuIcon" src="assets/img/menu/historico.png" alt=""></a>
     <img id="qrcode" class="pointer" src="assets/img/menu/qrcode.png" alt="">
