@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+.navbar-bg {
+    background-image: url("../assets/img/fundo.jpg") !important;
+    background-size: 1300px;
+    background-position: 40% 5%;
+    width: 100vw;
+    height: 17vh;
+    position: absolute;
+}
+.navbar-layer-preto{
+    width: 100vw;
+    height: 17vh;
+    margin-left: 0;
+    opacity: 0.6;
+    background-color: black;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.navbar-collapse{
+    z-index: 3 !important;
+}
+.nav-texto:link{
+    font-family: 'Pontano Sans', sans-serif;
+    font-weight:bold;!important;
+    color: #ffdb58;!important;
+    text-decoration: none!important;
+    text-transform: uppercase!important;
+    cursor:pointer !important;
+
+    font-size: 2rem !important;
+}
+.nav-texto:visited{
+    color: #ffdb58 !important;
+
+
+}
+.navbar-brand{
+    z-index: 3;
+}
+.icon_back{
+
+    height:5vh;
+}
+.nav-item{
+    font-size: 1.5rem !important;
+}
+.nav-button{
+    width:50vh !important;
+}
