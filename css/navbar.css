@@ -4,13 +4,13 @@
 
 }
 .navbar-bg {
-    background-image: url("../assets/img/fundo.jpg") !important;
+    background-image: url("assets/img/fundo.jpg") !important;
     background-size: 1300px;
     background-position: 40% 5%;
     width: 100vw;
     height: 17vh;
-    position: absolute;
 }
+
 .navbar-layer-preto{
     width: 100vw;
     height: 17vh;

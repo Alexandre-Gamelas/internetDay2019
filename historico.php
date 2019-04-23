@@ -3,6 +3,10 @@
 <?php include_once "helpers/header.php";?>
 <body>
 
+    <?php
+    $pagina = "histórico";
+    include_once "componentes/navbar.php" ?>
+
     <main>
         <section class="row justify-content-center">
             <article class="col-3 mt-2 mb-5">

@@ -6,6 +6,9 @@
 </style>
 
 <body>
+    <?php
+    $pagina = "horário";
+    include_once "componentes/navbar.php" ?>
     <section class="row">
         <article class="col-12 text-center" style="background-color: #FFDB58;">
             <h2 class="p-3">12:00</h2>
