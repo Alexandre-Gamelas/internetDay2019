@@ -2,10 +2,6 @@
     font-family: "Pontano Sans";
 }
 
-body{
-    overflow: hidden;
-
-}
 a:link{}
 a:hover{}
 a:active{
@@ -116,3 +112,28 @@ footer{
     background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+.seta{
+    width: 5vmin;
+    height: auto;
+    cursor: pointer;
+}
+
+.esquerda{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH();
+    -ms-filter: "FlipH";
+}

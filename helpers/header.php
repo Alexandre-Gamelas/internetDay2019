@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilos.css">
+
     <?php include_once "helpers/js.php"; ?>
     <title>Internet Day</title>
 </head>
