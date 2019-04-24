@@ -116,3 +116,9 @@ footer{
     background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
 }
 
+.pos-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
