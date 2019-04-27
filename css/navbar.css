@@ -26,7 +26,6 @@
     z-index: 3 !important;
 }
 .nav-texto:link{
-    font-family: 'Pontano Sans', sans-serif;
     font-weight:bold;!important;
     color: #ffdb58;!important;
     text-decoration: none!important;
@@ -49,6 +48,7 @@
 }
 .nav-item{
     font-size: 1.5rem !important;
+    font-family: "Poppins Black", sans-serif;
 }
 .nav-button{
     width:50vh !important;

@@ -76,7 +76,7 @@ foreach($entradas as $entrada){
     }
     echo "
            <section id='hora$num' class=\"row\" style='background-color: $bg'>
-                <article class=\"col-2\" style=\"border-right: 2px solid #9E9E90; position: relative\">
+                <article class=\"col-2\" style=\"border-right: 2px solid #9E9E90;\">
                     <img class=\"m-0 p-0\" src=$ponto alt=\"\" style=\"width: 6vmin; height: auto; position: absolute; top: 50%; left: 100%; transform: translate(-48%, -50%);\">
                 </article>
         

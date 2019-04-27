@@ -1,5 +1,5 @@
 *{
-    font-family: "Pontano Sans";
+    /*font-family: "Pontano Sans";*/
 }
 
 a:link{}
@@ -136,4 +136,8 @@ footer{
     transform: scaleX(-1);
     filter: FlipH();
     -ms-filter: "FlipH";
+}
+
+.display-none{
+    display: none!important;
 }
