@@ -43,13 +43,12 @@ footer{
 }
 
 #logo{
-    width: 25vmin;
-    height: 25vmin;
+    width: 20vmin;
+    height: 20vmin;
     border: 1px solid transparent;
     border-radius: 50%;
-
-    background-color: #FFDB58;
     z-index: +100;
+    transform: translate(-50%, -50%);
 }
 
 .text-parcerias{
@@ -63,15 +62,12 @@ footer{
 
 /** index **/
 .img-provisorio{
-    width: 150px;
-    height: 150px;
+    width: 30vmin;
+    height: 30vmin;
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
-    background-color: #FFDB58;
-    border: 1px solid transparent;
-    border-radius: 50%;
 }
 
 #opcoes_entrada{
@@ -140,4 +136,11 @@ footer{
 
 .display-none{
     display: none!important;
+}
+
+.pos-center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

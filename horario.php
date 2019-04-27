@@ -17,7 +17,8 @@
             </article>
 
             <article class="col-6 text-center">
-                <h2 class="p-3">12:00</h2>
+                <h2 id="horaDisplay" class="p-3">12:00</h2>
+                <!-- PERGUNTAR AOS STORES, PQ AQUI QUERO POR UMA VARIAVEL DE UM FICHERIO QUE ENTRA EM CONFLITO COM O ECHO POR CAUSA DA ORDEM DO HTML-->
             </article>
 
             <article class="col-3 text-center">

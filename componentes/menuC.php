@@ -6,7 +6,9 @@
 <section class="row justify-content-center">
     <div class="layer_preto_menu"></div>
 
-    <article id="logo" class="mt-5 animated slideInDown"></article>
+    <article id="logo" class="mt-5 animated slideInDown">
+        <?php include "componentes/logo.php" ?>;
+    </article>
 </section>
 
 <div class="mae_menu animated flipInY">
