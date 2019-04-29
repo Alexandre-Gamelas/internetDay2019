@@ -18,8 +18,23 @@
     <a href="horario.php"><img id="horario" class="pointer menuIcon" src="assets/img/menu/horario.png" alt=""></a>
     <img id="mapa" class="pointer menuIcon" src="assets/img/menu/mapa.png" alt="">
     <a href="historico.php"><img id="historico" class="pointer menuIcon" src="assets/img/menu/historico.png" alt=""></a>
-    <img id="qrcode" class="pointer" src="assets/img/menu/qrcode.png" alt="">
+    <img id="qrcode" data-toggle="modal" data-target="#qrModal" class="pointer" src="assets/img/menu/qrcode.png" alt="">
 </div>
+
+
+<div class="modal fade" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <video id="preview"></video>
+            </div>
+            <div class="modal-footer">
+                <button id="qrClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <footer class="container-fluid ">
