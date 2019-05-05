@@ -144,3 +144,32 @@ footer{
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+/***MAPA****/
+.sideBar{
+    height: 83vh;
+    width: 20vw;
+    background-color: white;
+    position: absolute;
+}
+
+#mapaSection{
+    position: absolute;
+    top: 0;
+    z-index: -100;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("../assets/img/mapa/mapaua.png");
+    background-size: 140%;
+    background-position: -10vw -5vh;
+}
+
+.pin{
+    position: absolute;
+    left: 70vw;
+    top: 71vh;
+
+    width: 6vw;
+    height: auto;
+}

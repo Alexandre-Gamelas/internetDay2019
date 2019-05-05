@@ -40,18 +40,21 @@
         scanPeriod: 1
     };
 
+    /*
     var scanner = new Instascan.Scanner(opts);
 
-    scanner.addListener('active', function () {
-        console.log("recording");
+    scanner.addListener('scan', function (content) {
+        console.log(content);
     });
+
+    scanner.addListener('active', function () {
+        console.log("ligou")
+    })
 
     $("#qrcode").click(function () {
         Instascan.Camera.getCameras().then(function (cameras) {
             if (cameras.length > 0) {
-                scanner.start(cameras[0]).then(function (value) {
-
-                });
+                scanner.start(cameras[0]);
             } else {
                 console.error('No cameras found.');
             }
@@ -64,7 +67,7 @@
         scanner.stop().then(function () {
             console.log("parou de gravar")
         });
-    })
+    })*/
 
 </script>
 </html>
