@@ -108,17 +108,6 @@ footer{
     background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .seta{
     width: 5vmin;
     height: auto;
@@ -203,4 +192,53 @@ footer{
 #textoPino p {
     margin-bottom: 0;
     padding: 2vmin;
+}
+
+/*** USER PROFILE ***/
+.user p{
+    font-family: "Pontano Sans", sans-serif;
+    margin-bottom: 0;
+}
+.userImg{
+    width: 35vw;
+    height: 35vw;
+    padding: 1vmin;
+
+    border-radius: 50%;
+    background-color: white;
+    transform: translate(0, -50%);
+
+}
+
+.userName{
+    font-size: 7vmin;
+}
+
+.userCurso{
+    color: #606060;
+    text-transform: uppercase;
+    margin-bottom: 2vh!important;
+}
+
+.userUni{
+    color: #606060;
+}
+
+.titulo-qr{
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10vmin;
+    color: #FFDB58;
+}
+
+.qrcode{
+    padding: 6vmin;
+    background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+    border-radius: 15px;
+}
+
+.olho{
+    width: 15vmin;
+    height: auto
 }

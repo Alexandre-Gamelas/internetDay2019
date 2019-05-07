@@ -16,7 +16,7 @@
         <a class="navbar-brand pl-4" href="menu.php"> <img class="icon_back" src="assets/img/navbar/back-arrow.svg"></a>
         <ul class="navbar-nav m-auto">
             <li class="nav-item active">
-                <a class="nav-link nav-texto pos-center" href="#"> <?php echo $pagina ?> </a>
+                <a class="nav-link nav-texto pos-center" href="#"> <?php if(isset($pagina)) echo $pagina ?> </a>
             </li>
 
         </ul>
