@@ -9,7 +9,7 @@
 
     <main>
         <section class="row justify-content-center">
-            <article class="col-3 mt-2 mb-5">
+            <article class="col-3 mt-5 mb-5">
                 <img class="img-fluid" src="assets/img/entrada_utilizador/olho-s.png" alt="">
             </article>
         </section>

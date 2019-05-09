@@ -4,6 +4,7 @@
 <?php include_once "helpers/header.php";?>
 
 <body>
+    <?php include_once "scripts/check_autenticador.php"?>
     <?php include_once "componentes/backgroundC.php"; ?>
     <?php include_once "componentes/menuC.php"; ?>
 </body>

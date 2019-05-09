@@ -242,3 +242,27 @@ footer{
     width: 15vmin;
     height: auto
 }
+
+/********REGISTAR**********/
+.txtRegistar{
+    font-family: "Pontano Sans", sans-serif;
+}
+
+.btnRegistar{
+    background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+}
+
+.inputRegistar{
+    background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+    border: none!important;
+    color: grey;
+    padding: 0.7rem;
+    border-radius: 15px;
+}
+
+input[type="date"]::before{
+    content: attr(placeholder)": ";
+}
+input[type="date"]:focus::before {
+    content: "" !important;
+}

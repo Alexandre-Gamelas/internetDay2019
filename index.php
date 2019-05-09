@@ -2,12 +2,8 @@
 <html lang="en">
 
 <?php include_once "helpers/header.php";?>
-<style>
-    <?php include 'css/animate.css'; ?>
-</style>
-
 <body>
-
+   <?php include_once "scripts/check_autenticador.php"?>
    <?php include_once "componentes/backgroundC.php"; ?>
 
     <?php include "componentes/logo.php"; ?>;
