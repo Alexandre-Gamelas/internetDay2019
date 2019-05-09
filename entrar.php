@@ -6,6 +6,8 @@
     <?php include_once "componentes/backgroundC.php"; ?>
     <?php
 
+    include_once "connections/connection.php";
+    new_db_connection();
 
     if(isset($_SESSION['log'])){
         header("Location: ./menu.php");
