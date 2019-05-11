@@ -11,7 +11,8 @@
 <script>
     let scanner = new Instascan.Scanner(
         {
-            video: document.getElementById('preview')
+            video: document.getElementById('preview'),
+            mirror: false
         }
     );
 
@@ -23,7 +24,7 @@
         Instascan.Camera.getCameras().then(cameras =>
         {
             if(cameras.length > 0){
-            scanner.start(cameras[0]);
+            scanner.start(cameras[1]);
         } else {
             console.error("Não existe câmera no dispositivo!");
         }
