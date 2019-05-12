@@ -266,3 +266,32 @@ input[type="date"]::before{
 input[type="date"]:focus::before {
     content: "" !important;
 }
+/*******CAMARA DIV QRCODE********/
+.bg-transparent{
+    background-color: transparent;
+}
+.modal-dialog {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+}
+
+.modal-body{
+    margin: auto!important;
+    border-color: transparent!important;
+}
+
+.modal-content{
+    border-color: transparent;
+    width: 100vw!important;
+    height: 80vh!important;
+}
+
+#qrClose{
+    position: absolute;
+    top: 20%;
+    z-index: +1000;
+    width: 100vw;
+    background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+}

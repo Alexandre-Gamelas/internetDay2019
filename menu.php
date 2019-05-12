@@ -8,36 +8,12 @@
     <?php include_once "componentes/backgroundC.php"; ?>
     <?php include_once "componentes/menuC.php"; ?>
 </body>
-<script>
-    let scanner = new Instascan.Scanner(
-        {
-            video: document.getElementById('preview'),
-            mirror: false
-        }
-    );
+<?php
+    if($_SESSION['role'] == 'scout'){
+        echo "<script src='js/myScanner.js'></script>";
+    } else {
+        echo "<script src='js/myQrgenerator.js'></script>";
+    }
 
-    $('#qrcode').click(function () {
-        scanner.addListener('scan', function(content) {
-            alert('scanou o conteudo: ' + content);
-            window.open(content, "_blank");
-        });
-        Instascan.Camera.getCameras().then(cameras =>
-        {
-            if(cameras.length > 0){
-            scanner.start(cameras[1]);
-        } else {
-            console.error("Não existe câmera no dispositivo!");
-        }
-    });
-    });
-
-    $('#qrClose').click(function () {
-        scanner.stop().then(function () {
-            console.log("parou");
-        })
-    });
-
-
-
-</script>
+?>
 </html>

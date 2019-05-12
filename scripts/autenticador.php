@@ -10,13 +10,15 @@ $dados = array(
     'alex' => array(
         'mail' => 'alex@ua.pt',
         'pass' => 'pass2',
-        'role' => 'estudante'
+        'role' => 'estudante',
+        'id' => 1
     ),
 
     'kitty' => array(
         'mail' => 'kitty@ua.pt',
         'pass' => 'pass3',
-        'role' => 'estudante'
+        'role' => 'estudante',
+        'id' => 2
     )
 );
 
@@ -34,12 +36,14 @@ if (isset($_POST['mail']) && isset($_POST['pass'])){
             $pass = $passInserido;
             $name = $nome;
             $role = $user['role'];
+            $id = $user['id'];
             $isLogged = true;
 
             $_SESSION['log'] = $isLogged;
             $_SESSION['name'] = $name;
             $_SESSION['mail'] = $mail;
             $_SESSION['role'] = $role;
+            $_SESSION['id'] = $id;
 
             header("Location: ../menu.php");
         }
