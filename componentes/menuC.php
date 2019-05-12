@@ -21,17 +21,30 @@
     <img id="qrcode" data-toggle="modal" data-target="#qrModal" class="pointer" src="assets/img/menu/qrcode.png" alt="">
 </div>
 
+<?php
+    if($_SESSION['role'] == 'scout'){
+        echo "
+           <section id='janelaQr' class=\"row justify-content-center align-items-center animated d-none fadeOutDown\">
+                <article class=\"col-12\">
+                    <button id=\"qrClose\" type=\"button\" class=\"btn btn-secondary mb-1\" data-dismiss=\"modal\">FECHAR</button>
+                    <video class=\"img-fluid\" id=\"preview\"></video>
+                </article>
+            </section>
+        ";
+    } else if($_SESSION['role'] == 'estudante'){
+        echo "
+            <section id='janelaQr' class=\"row justify-content-center align-items-center animated d-none fadeOutDown\">
+                <article id='qrcode2' class=\"col-12 text-center bg-white\">
+                    <button id=\"qrClose\" type=\"button\" class=\"btn btn-secondary mb-1\" data-dismiss=\"modal\">FECHAR</button>
+                </article>
+            </section>
+        ";
+    }
 
-<div class="modal fade bg-transparent" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog bg-transparent" role="document">
-        <div class="modal-content bg-transparent">
-            <div id="qr" class="modal-body bg-transparent text-right row align-items-center justify-content-center">
-                <button id="qrClose" type="button" class="btn btn-secondary mb-1" data-dismiss="modal">x</button>
-                <video class="img-fluid" id="preview"></video>
-            </div>
-        </div>
-    </div>
-</div>
+
+?>
+
+
 
 
 

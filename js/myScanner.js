@@ -6,6 +6,10 @@ let scanner = new Instascan.Scanner(
 );
 
 $('#qrcode').click(function () {
+    $('#janelaQr').removeClass('fadeOutDown');
+    $('#janelaQr').removeClass('d-none');
+    $('#janelaQr').addClass('fadeInDown');
+
     scanner.addListener('scan', function(content) {
         alert('scanou o conteudo: ' + content);
     });
@@ -21,7 +25,16 @@ $('#qrcode').click(function () {
 });
 
 $('#qrClose').click(function () {
-    scanner.stop().then(function () {
-        console.log("parou");
-    })
+    animClose();
+    setTimeout(function () {
+        scanner.stop()
+    }, 450);
 });
+
+function animClose() {
+    $('#janelaQr').removeClass('fadeInDown');
+    $('#janelaQr').addClass('fadeOutDown');
+    setTimeout(function () {
+        $('#janelaQr').addClass('d-none');
+    }, 400)
+}

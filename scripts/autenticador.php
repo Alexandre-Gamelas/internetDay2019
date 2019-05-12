@@ -25,13 +25,13 @@ $dados = array(
 
 /////////////////////////////////////
 
-if (isset($_POST['mail']) && isset($_POST['pass'])){
+if (isset($_POST['mail']) && isset($_POST['pass'])) {
     $mailInserido = $_POST['mail'];
     $passInserido = $_POST['pass'];
 
     $contador = 0;
-    foreach( $dados as $nome => $user){
-        if($mailInserido == $user['mail'] && $passInserido == $user['pass'] ){
+    foreach ($dados as $nome => $user) {
+        if ($mailInserido == $user['mail'] && $passInserido == $user['pass']) {
             $mail = $mailInserido;
             $pass = $passInserido;
             $name = $nome;
@@ -48,9 +48,7 @@ if (isset($_POST['mail']) && isset($_POST['pass'])){
             header("Location: ../menu.php");
         }
         $contador++;
-        if($contador == sizeof($dados))
+        if ($contador == sizeof($dados))
             echo "<h1>ERRO NAS CREDENCIAS</h1>";
     };
 }
-
-

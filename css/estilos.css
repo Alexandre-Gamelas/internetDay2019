@@ -256,7 +256,6 @@ footer{
     background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
     border: none!important;
     color: grey;
-    padding: 0.7rem;
     border-radius: 15px;
 }
 
@@ -267,31 +266,35 @@ input[type="date"]:focus::before {
     content: "" !important;
 }
 /*******CAMARA DIV QRCODE********/
-.bg-transparent{
-    background-color: transparent;
-}
-.modal-dialog {
+#janelaQr{
+    height: 100vh;
+    width: 100vw;
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%) !important;
-}
+    top: 0;
+    left: 0;
 
-.modal-body{
-    margin: auto!important;
-    border-color: transparent!important;
-}
-
-.modal-content{
-    border-color: transparent;
-    width: 100vw!important;
-    height: 80vh!important;
+    margin:0!important;
 }
 
 #qrClose{
     position: absolute;
-    top: 20%;
+    top: 50vh;
+    left: 0;
     z-index: +1000;
     width: 100vw;
     background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+}
+
+.videoCaixa{
+    width: 100vw;
+    height: 80vh;
+}
+
+#qrcode2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 10vh 0 10vh 0;
 }
