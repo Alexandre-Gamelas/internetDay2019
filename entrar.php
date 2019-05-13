@@ -21,15 +21,16 @@
                </section>
     
                 <section class=\"row justify-content-center mt-3\" id=\"form_entrada\">
-                    <form method=\"post\" action=\"scripts/autenticador.php\" class=\"text-center\">
+                    <form method=\"post\" action=\"scripts/login_script.php\" class=\"text-center\">
                         <input class=\"col-12 animated bounceInUp form-control inputRegistar\" type=\"text\" placeholder=\"Email\" name=\"mail\">
                         <br>
                         <input class=\"col-12 mt-3 animated bounceInUp form-control inputRegistar\" type=\"password\" name=\"pass\" placeholder=\"Password\" style=\"animation-delay: 0.1s\">
                         <br>
                         <button id=\"submit_entrar\" class=\"col-8 mt-2 pl-1 animated bounceInUp inputRegistar\" type=\"submit\" style=\"animation-delay: 0.15s\">ENTRAR</button>
+                    <button id='submit_entrar' class='col-10 mt-2 pl-1 bounceInUp inputRegistar'><a href='registar.php'>Não tens conta? Regista-te!</a></button>
                     </form>
                 </section>
-        
+                        
         ";
     }
 
