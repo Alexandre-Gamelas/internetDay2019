@@ -14,7 +14,7 @@
         </article>
 
         <article class="col-12 text-center mt-4 animated bounceInUp" style="animation-delay: 0.1s;">
-            <button>REGISTAR</button>
+            <a href="registar.php"><button>REGISTAR</button></a>
         </article>
     </section>
 
