@@ -25,7 +25,7 @@
     if($_SESSION['role'] == 'scout'){
         echo "
            <section id='janelaQr' class=\"row justify-content-center align-items-center animated d-none fadeOutDown\">
-                <article class=\"col-12\">
+                <article id='videoQr' class=\"col-12 position-relative\">
                     <button id=\"qrClose\" type=\"button\" class=\"btn btn-secondary mb-1\" data-dismiss=\"modal\">FECHAR</button>
                     <video class=\"img-fluid\" id=\"preview\"></video>
                 </article>
@@ -39,20 +39,6 @@
                 </article>
             </section>
         ";
+        echo "<p id='qrTexto' class='d-none'>".$_SESSION['id']."</p>";
     }
-
-
 ?>
-
-
-
-
-
-<footer class="container-fluid ">
-    <section class="row justify-content-center animated slideInUp">
-        <article class="col-8 text-center">
-            <a href="index.php" class="text-parcerias">PARCERIAS</a>
-        </article>
-    </section>
-
-</footer>

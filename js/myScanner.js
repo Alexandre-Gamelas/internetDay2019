@@ -11,7 +11,9 @@ $('#qrcode').click(function () {
     $('#janelaQr').addClass('fadeInDown');
 
     scanner.addListener('scan', function(content) {
-        alert('scanou o conteudo: ' + content);
+        alert('Scannou o utilizador: ' + content)
+        window.location.href = 'scripts/qrAdd.php?id=' + content
+
     });
 
     Instascan.Camera.getCameras().then(cameras =>

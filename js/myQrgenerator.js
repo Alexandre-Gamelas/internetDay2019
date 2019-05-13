@@ -1,7 +1,7 @@
 window.onload = function () {
-    var text = "<?php echo _$SESSION['id']?>";
+    var texto = document.getElementById('qrTexto').innerHTML;
     jQuery('#qrcode2').qrcode({
-        text	: text
+        text	: texto
     });
 };
 
