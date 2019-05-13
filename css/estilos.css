@@ -278,7 +278,7 @@ input[type="date"]:focus::before {
 
 #qrClose{
     position: absolute;
-    top: 50vh;
+    bottom: -1vh;
     left: 0;
     z-index: +1000;
     width: 100vw;
