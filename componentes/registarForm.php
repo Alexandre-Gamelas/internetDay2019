@@ -40,7 +40,7 @@
 
 
         <input class="col-8 form-control inputRegistar mt-4" type="text" placeholder="Nº de Aluno" name="n_aluno">
-        <select class="col-8 form-control inputRegistar mt-4" type="text" form="curso" name="curso">
+        <select class="col-8 form-control inputRegistar mt-4" type="text" form="form_estudante" name="curso">
             <option value="null">Curso</option>
             <?php $link = new_db_connection();
             $stmt = mysqli_stmt_init($link);
@@ -55,7 +55,7 @@
 
             ?></select>
         <input class="col-8 form-control inputRegistar mt-4" type="date" name="nascimento" placeholder="Nascimento*">
-        <select class="col-8 form-control inputRegistar mt-4 data" name="nacionalidade" form="nacionalidade">
+        <select class="col-8 form-control inputRegistar mt-4 data" name="nacionalidade" form="form_estudante">
         <option value="null">Nacionalidade</option>
         <?php
         $link = new_db_connection();
