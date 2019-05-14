@@ -10,7 +10,7 @@ if($_SESSION['role'] == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome, 20</p>
+                <p class='userName'>$nome</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>
@@ -27,7 +27,7 @@ if($_SESSION['role'] == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome, 20</p>
+                <p class='userName'>$nome</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>

@@ -24,11 +24,15 @@
                     <form method=\"post\" action=\"scripts/login_script.php\" class=\"text-center\">
                         <input class=\"col-12 animated bounceInUp form-control inputRegistar\" type=\"text\" placeholder=\"Email\" name=\"mail\">
                         <br>
-                        <input class=\"col-12 mt-3 animated bounceInUp form-control inputRegistar\" type=\"password\" name=\"pass\" placeholder=\"Password\" style=\"animation-delay: 0.1s\">
+                        <input class=\"col-12 animated bounceInUp form-control inputRegistar\" type=\"password\" name=\"pass\" placeholder=\"Password\" style=\"animation-delay: 0.1s\">
                         <br>
-                        <button id=\"submit_entrar\" class=\"col-8 mt-2 pl-1 animated bounceInUp inputRegistar\" type=\"submit\" style=\"animation-delay: 0.15s\">ENTRAR</button>
-                    <button id='submit_entrar' class='col-10 mt-2 pl-1 bounceInUp inputRegistar'><a href='registar.php'>Não tens conta? Regista-te!</a></button>
+                        <button id=\"submit_entrar\" class=\"col-8 mt-5 p-2 animated bounceInUp inputRegistar\" type=\"submit\" style=\"animation-delay: 0.15s\">ENTRAR</button>
                     </form>
+                    
+                    <article class='col-8 mt-2 text-center'>
+                        <a href='registar.php'><button class='animated bounceInUp inputRegistar p-2 font-italic'>Não tens conta? Regista-te!</button></a>
+                    </article>
+                    
                 </section>
                         
         ";
