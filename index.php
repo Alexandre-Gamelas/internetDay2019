@@ -6,7 +6,7 @@
    <?php include_once "scripts/check_autenticador.php"?>
    <?php include_once "componentes/backgroundC.php"; ?>
 
-    <?php include "componentes/logo.php"; ?>;
+    <?php include "componentes/logo.php"; ?>
 
     <section class="row" id="opcoes_entrada">
         <article class="col-12 text-center animated bounceInUp">
