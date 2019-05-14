@@ -1,43 +1,94 @@
 <?php
 require_once "../connections/connection.php";
 
+if (isset($_GET["role"])) {
+    if($_GET["role"]==1){
+    if (isset($_POST["nome"]) && isset($_POST["apelido"]) && isset($_POST["pass"]) && isset($_POST["mail"]) && isset($_POST["linkdin"]) && isset($_POST["nascimento"]) && isset($_POST["nacionalidade"]) && isset($_POST["n_aluno"])&& isset($_POST["curso"])) {
 
-if(isset($_POST["nome"])&&isset($_POST["apelido"])&&isset($_POST["pass"])&&isset($_POST["mail"])&&isset($_POST["linkdin"])&&isset($_POST["nascimento"])&&isset($_POST["nacionalidade"])) {
+
+        $link = new_db_connection();
+        $stmt = mysqli_stmt_init($link);
+        $query = "SELECT id_nacionalidades FROM nacionalidades WHERE nacionalidades.nome LIKE ? ";
+
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, 's', $nac);
+            $nac=$_POST["nacionalidade"];
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $id);
+            while (mysqli_stmt_fetch($stmt)) {
+                $id_nac = $id;
+                mysqli_stmt_close($stmt);
+            }
+        }
+        mysqli_close($link);
+
+        $link = new_db_connection();
+        $stmt = mysqli_stmt_init($link);
+        $query = "SELECT id_cursos FROM cursos WHERE cursos.nome LIKE ? ";
+
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, 's', $curso);
+            $curso=$_POST["curso"];
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $id);
+            while (mysqli_stmt_fetch($stmt)) {
+                $id_curso = $id;
+                mysqli_stmt_close($stmt);
+            }
+        }
+        mysqli_close($link);
 
 
-    $link = new_db_connection();
-    $stmt = mysqli_stmt_init($link);
-    $query = "SELECT id_nacionalidades FROM nacionalidades WHERE nacionalidades.nome LIKE 'Portugal' ";
+        $link = new_db_connection();
+        $stmt = mysqli_stmt_init($link);
+        $query = "INSERT INTO utilizadores (nome, apelido, pass, mail, linkdin, data_nascimento, ref_nacionalidades, roles) VALUES (?, ?, ?, ?, ?, ?, $id_nac, 'estudante')";
 
-    if (mysqli_stmt_prepare($stmt, $query)) {
-        mysqli_stmt_execute($stmt);
-        //mysqli_stmt_bind_param($stmt, 's', $nac);
-        //$nac = $_POST["nacionalidade"];
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $id);
-        while(mysqli_stmt_fetch($stmt)){
-        $id_nac = $id;
-        var_dump($id_nac);
-        mysqli_stmt_close($stmt);}
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento);
+            $nome = $_POST["nome"];
+            $apelido = $_POST["apelido"];
+            $mail = $_POST["mail"];
+            $linkdin = $_POST["linkdin"];
+            $nascimento = $_POST["nascimento"];
+            $password_cript = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+            mysqli_stmt_execute($stmt);
+
+            mysqli_stmt_close($stmt);
+        }
+        mysqli_close($link);
+
+        $link = new_db_connection();
+        $stmt = mysqli_stmt_init($link);
+        $query = "SELECT id_utilizadores FROM utilizadores WHERE utilizadores.mail LIKE ? ";
+
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, 's', $mail);
+            $mail=$_POST["mail"];
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $id);
+            while (mysqli_stmt_fetch($stmt)) {
+                $id_ut = $id;
+                mysqli_stmt_close($stmt);
+            }
+        }
+        mysqli_close($link);
+
     }
-    mysqli_close($link);
-    $link=new_db_connection();
-$stmt = mysqli_stmt_init($link);
-    $query = "INSERT INTO utilizadores (nome, apelido, pass, mail, linkdin, data_nascimento, ref_nacionalidades) VALUES (?, ?, ?, ?, ?, ?, $id_nac)";
+        $link = new_db_connection();
+        $stmt = mysqli_stmt_init($link);
+        $query = "INSERT INTO estudantes (ref_utilizadores, n_aluno, curriculo, ref_cursos) VALUES ($id_ut, ?, ? $id_curso)";
 
-    if(mysqli_stmt_prepare($stmt, $query)){
-        mysqli_stmt_bind_param($stmt, 'ssssss', $nome,$apelido,$password_cript,$mail,$linkdin,$nascimento);
-        $nome=$_POST["nome"];
-        $apelido=$_POST["apelido"];
-        $mail=$_POST["mail"];
-        $linkdin=$_POST["linkdin"];
-        $nascimento=$_POST["nascimento"];
-        $password_cript=password_hash($_POST["pass"],PASSWORD_DEFAULT);
-        mysqli_stmt_execute($stmt);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, 'ss', $n_aluno, $curriculo);
+            $n_aluno = $_POST["n_aluno"];
+            $curriculo = $_POST["curriculo"];
+            mysqli_stmt_execute($stmt);
 
-        mysqli_stmt_close($stmt);
+            mysqli_stmt_close($stmt);
+        }
+        mysqli_close($link);
     }
-mysqli_close($link);
+
+    //header("location: ../entrar.php");
 }
-//header ("location: ../entrar.php");
-    ?>
+?>
