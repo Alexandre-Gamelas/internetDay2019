@@ -1,0 +1,36 @@
+{
+  "name": "INTERNET DAY 2K19",
+  "short_name": "ID",
+  "icons": [
+    {
+    "src": "assets/img/logo.png",
+    "type":"image/png",
+    "sizes": "96x96"
+  },
+    {
+      "src": "assets/img/logo.png",
+      "type":"image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "type":"image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "type":"image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "type":"image/png",
+      "sizes": "2481x2582"
+    }
+    ],
+  "start_url": "index.php",
+  "display": "standalone",
+  "background_color": "#FFDB58",
+  "theme_color": "#FFDB58",
+  "prefer_related_applications": false
+}
