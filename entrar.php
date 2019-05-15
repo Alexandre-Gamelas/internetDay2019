@@ -8,8 +8,17 @@
 
     include_once "connections/connection.php";
     //new_db_connection();
-
-    if(isset($_SESSION['log'])){
+    if(isset($_GET['msg'])){
+        switch ($_GET['msg']){
+            case 'erroPass':
+                echo "<script>alert('Erro na password!')</script>";
+                break;
+            case 'erroMail':
+                echo "<script>alert('Erro no email!')</script>";
+                break;
+        }
+    }
+    if(isset($_SESSION['name'])){
         header("Location: ./menu.php");
     } else {
 

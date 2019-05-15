@@ -54,7 +54,11 @@ if($_SESSION['role'] == "estudante"){
                 //var_dump($_SESSION);
                 header("Location: ../menu.php");
 
+            } else {
+                header("Location: ../entrar.php?msg=erroPass");
             }
+        } else {
+            header("Location: ../entrar.php?msg=erroMail");
         }
         mysqli_stmt_close($stmt);
         mysqli_close($link);
@@ -92,7 +96,11 @@ if($_SESSION['role'] == "estudante"){
                 //var_dump($_SESSION);
                 header("Location: ../menu.php");
 
+            } else {
+                header("Location: ../entrar.php?msg=erroPass");
             }
+        } else {
+            header("Location: ../entrar.php?msg=erroMail");
         }
         mysqli_stmt_close($stmt);
         mysqli_close($link);
