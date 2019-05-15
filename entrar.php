@@ -7,7 +7,8 @@
     <?php
 
     include_once "connections/connection.php";
-    //new_db_connection();
+
+    //erros
     if(isset($_GET['msg'])){
         switch ($_GET['msg']){
             case 'erroPass':
@@ -15,6 +16,9 @@
                 break;
             case 'erroMail':
                 echo "<script>alert('Erro no email!')</script>";
+                break;
+            case 'erroRegisto':
+                echo "<script>alert('Credênciais por inserir!')</script>";
                 break;
         }
     }

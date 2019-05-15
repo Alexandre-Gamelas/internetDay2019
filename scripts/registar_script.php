@@ -3,7 +3,7 @@ require_once "../connections/connection.php";
 if (isset($_GET["role"])) {
     $role = $_GET["role"];
     if ($role == 1) {
-        if ((isset($_POST["nome"])) && (isset($_POST["apelido"])) && (isset($_POST["pass"])) && (isset($_POST["mail"])) && (isset($_POST["linkdin"])) && (isset($_POST["nascimento"])) && (isset($_POST["nacionalidade"])) && (isset($_POST["n_aluno"])) && (isset($_POST["curso"]))) {
+        if ((isset($_POST["nome"])) && (isset($_POST["apelido"])) && (isset($_POST["pass"])) && (isset($_POST["mail"])) && (isset($_POST["linkdin"]))) {
             $link = new_db_connection();
             $stmt = mysqli_stmt_init($link);
             $query = "SELECT  id_nacionalidades  FROM nacionalidades WHERE nacionalidades.nome LIKE ? ";
@@ -39,7 +39,7 @@ if (isset($_GET["role"])) {
                 mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento);
                 $nome = $_POST["nome"];
                 $apelido = $_POST["apelido"];
-                $mail = $_POST["mail"];
+                $mail = strtolower($_POST["mail"]);
                 $linkdin = $_POST["linkdin"];
                 $nascimento = $_POST["nascimento"];
                 $password_cript = password_hash($_POST["pass"], PASSWORD_DEFAULT);
@@ -54,7 +54,7 @@ if (isset($_GET["role"])) {
             $query = "SELECT id_utilizadores FROM utilizadores WHERE utilizadores.mail = ? ";
             if (mysqli_stmt_prepare($stmt, $query)) {
                 mysqli_stmt_bind_param($stmt, 's', $mail);
-                $mail = $_POST["mail"];
+                $mail = strtolower($_POST["mail"]);
                 mysqli_stmt_execute($stmt);
                 mysqli_stmt_bind_result($stmt, $id);
                 while (mysqli_stmt_fetch($stmt)) {
@@ -135,7 +135,7 @@ if (isset($_GET["role"])) {
                     mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento);
                     $nome = $_POST["nome"];
                     $apelido = $_POST["apelido"];
-                    $mail = $_POST["mail"];
+                    $mail = strtolower($_POST["mail"]);
                     $linkdin = $_POST["linkdin"];
                     $nascimento = $_POST["nascimento"];
                     $password_cript = password_hash($_POST["pass"], PASSWORD_DEFAULT);
@@ -150,7 +150,7 @@ if (isset($_GET["role"])) {
                 $query = "SELECT id_utilizadores FROM utilizadores WHERE utilizadores.mail = ? ";
                 if (mysqli_stmt_prepare($stmt, $query)) {
                     mysqli_stmt_bind_param($stmt, 's', $mail);
-                    $mail=$_POST["mail"];
+                    $mail=strtolower($_POST["mail"]);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_bind_result($stmt, $id);
                     while (mysqli_stmt_fetch($stmt)) {
@@ -174,5 +174,7 @@ if (isset($_GET["role"])) {
         }
     }
     header("location: ../entrar.php");
+} else {
+    header("Location: ../entrar.php?msg=erroRegisto");
 }
 ?>
