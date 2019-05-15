@@ -17,11 +17,6 @@
             <a href="registar.php"><button>REGISTAR</button></a>
         </article>
     </section>
-    <section class="row justify-content-center d-none" id="btn">
-        <article class="col-6">
-            <h1>SACAR APP</h1>
-        </article>
-    </section>
 </body>
 
 </html>

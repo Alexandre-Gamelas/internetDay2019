@@ -10,7 +10,6 @@ window.onload = function (ev) {
         // Stash the event so it can be triggered later.
         deferredPrompt = e;
         // Update UI notify the user they can add to home screen
-        alert("ola");
         btnAdd.style.display = 'block';
     });
 
@@ -20,7 +19,8 @@ window.onload = function (ev) {
         // Show the prompt
         deferredPrompt.prompt();
         // Wait for the user to respond to the prompt
-        deferredPrompt.userChoice.then((choiceResult) => {
+        deferredPrompt.userChoice
+            .then((choiceResult) => {
                 if (choiceResult.outcome === 'accepted') {
                     console.log('User accepted the A2HS prompt');
                 } else {

@@ -50,7 +50,7 @@ if (isset($_GET["role"])) {
                 mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento, $foto);
                 $nome = $_POST["nome"];
                 $apelido = $_POST["apelido"];
-                $mail = $_POST["mail"];
+                $mail = strtolower($_POST["mail"]);
                 $linkdin = $_POST["linkdin"];
                 $nascimento = $_POST["nascimento"];
                 $foto=$_POST["fotografia"];
@@ -169,7 +169,7 @@ if (isset($_GET["role"])) {
                     mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento, $foto);
                     $nome = $_POST["nome"];
                     $apelido = $_POST["apelido"];
-                    $mail = $_POST["mail"];
+                    $mail = strtolower($_POST["mail"]);
                     $linkdin = $_POST["linkdin"];
                     $nascimento = $_POST["nascimento"];
                     $foto=$_POST["fotografia"];
@@ -187,7 +187,7 @@ if (isset($_GET["role"])) {
 
                 if (mysqli_stmt_prepare($stmt, $query)) {
                     mysqli_stmt_bind_param($stmt, 's', $mail);
-                    $mail=$_POST["mail"];
+                    $mail=strtolower($_POST["mail"]);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_bind_result($stmt, $id);
 

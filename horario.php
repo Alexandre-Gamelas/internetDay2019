@@ -9,6 +9,8 @@
     <body>
 
         <?php
+        session_start();
+        include_once "scripts/checkin.php";
         $pagina = "horário";
         include_once "componentes/navbar.php";
         include "componentes/fakeData/horario_data.php"; ?>

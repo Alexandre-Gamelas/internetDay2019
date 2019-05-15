@@ -2,9 +2,11 @@
 <html lang="en">
 
 <?php include_once "helpers/header.php";?>
-
 <body>
-    <?php include_once "scripts/check_autenticador.php"?>
+    <?php
+        session_start();
+        include_once "scripts/checkin.php"
+    ?>
     <?php include_once "componentes/backgroundC.php"; ?>
     <?php include_once "componentes/menuC.php"; ?>
 </body>

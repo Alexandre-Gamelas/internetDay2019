@@ -3,6 +3,7 @@
 <?php include_once "helpers/header.php";?>
 <?php
     session_start();
+    include_once "scripts/checkin.php";
     $id = $_SESSION['id'];
 ?>
 <body>

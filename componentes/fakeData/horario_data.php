@@ -3,57 +3,63 @@
 //para que este componente seja competivel com varios ecrãs, cada ecrã poderá ter uma variavel onde está guaradada essa query!!!
 $entradas = array(
     array(
-        "Evento 1",
-        "12:00",
-        "DeCa",
-        "Carlos David"
+        "Acolhimento aos Participantes",
+        "09:00",
+        "DeCa - CCI",
+        "-"
     ),
 
     array(
-        "Evento 2",
-        "13:00",
-        "CP",
-        "Ana Pereira"
+        "Mesa de Abertura",
+        "09:15",
+        "DeCa - CCI",
+        "-"
     ),
 
     array(
-        "Evento 3",
-        "13:30",
-        "Meia Lua",
-        "Isabel Ventura"
+        "Talk: Jeffrey Bardzell",
+        "09:30",
+        "Auditório CCI",
+        "Jeffrey Bardzell"
     ),
 
     array(
-        "Evento 4",
-        "14:00",
+        "Coffe Break",
+        "10:30",
         "DeCa - Bar",
-        "Mário Vairinhos"
+        "-"
     ),
     array(
-        "Evento 1",
-        "12:00",
+        "Mesa Redonda",
+        "11:00",
         "DeCa",
-        "Carlos Santos"
+        "Emilia Duarte, Heitor Alvelos, Jorge Rosa, Licínio Roque"
     ),
 
     array(
-        "Evento 2",
-        "13:00",
-        "CP",
-        "Ana Pereira"
+        "Período de Almoço",
+        "12:45",
+        "Restaurante Universitário",
+        "-"
     ),
 
     array(
-        "Evento 3",
-        "13:30",
-        "Meia Lua",
-        "Isabel Ventura"
-    ),
-
-    array(
-        "Evento 4",
+        "Apresentação de Projetos NTC e MCMM",
         "14:00",
-        "DeCa - Bar",
-        "Mário Vairinhos"
+        "DeCa - CCCI",
+        "-"
     ),
+
+    array(
+        "Coffee Break + Speed Dating",
+        "16:30",
+        "DeCa - CCCI",
+        "-"
+    ),
+    array(
+        "Encerramento",
+        "17:30",
+        "DeCa - CCCI",
+        "-"
+    )
 );

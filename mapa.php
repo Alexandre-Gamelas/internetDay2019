@@ -6,6 +6,11 @@
 </style>
 
 <body>
+    <?php
+    session_start();
+    include_once "scripts/checkin.php";
+
+    ?>
     <?php $pagina="mapa" ?>
     <?php include_once "componentes/navbar.php" ?>
     <?php include_once "componentes/sidebarMapa.php" ?>

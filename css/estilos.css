@@ -93,7 +93,7 @@ footer{
 /* ENTRAR */
 .titulo-1{
     color: #FFDB58;
-    font-family: Poppins Black;
+    font-family: Poppins Black, sans-serif;
     font-size: 10vmin;
 }
 

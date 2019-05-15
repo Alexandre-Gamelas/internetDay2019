@@ -38,7 +38,7 @@ if($_SESSION['role'] == "estudante"){
                     ";
     if (mysqli_stmt_prepare($stmt, $query)) {
         mysqli_stmt_bind_param($stmt, 's', $mail);
-        $mail = $_POST["mail"];
+        $mail = strtolower($_POST["mail"]);
         $password = $_POST["pass"];
         mysqli_stmt_execute($stmt);
         mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $curso, $universidade);
@@ -76,7 +76,7 @@ if($_SESSION['role'] == "estudante"){
                     ";
     if (mysqli_stmt_prepare($stmt, $query)) {
         mysqli_stmt_bind_param($stmt, 's', $mail);
-        $mail = $_POST["mail"];
+        $mail = strtolower($_POST["mail"]);
         $password = $_POST["pass"];
         mysqli_stmt_execute($stmt);
         mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $cargo, $empresa);
