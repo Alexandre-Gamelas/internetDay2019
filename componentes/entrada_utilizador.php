@@ -79,7 +79,7 @@ function renderScanados1($nome, $apelido, $linkdin, $curso, $universidade, $id){
                 </article>
 
                 <article class=\"col-2 text-center\">
-                    <a href='perfil_detail.php?id=$id' target='_blank'><img class=\"img-fluid\" src=\"assets/img/entrada_utilizador/mais-s.png\" alt=\"\"></a>
+                    <a href='perfil_detail.php?id=$id'><img class=\"img-fluid\" src=\"assets/img/entrada_utilizador/mais-s.png\" alt=\"\"></a>
                 </article>
 
                 <article class=\"col-12\">
@@ -102,7 +102,7 @@ function renderScanados2($nome, $apelido, $linkdin, $cargo, $empresa, $id){
                 </article>
 
                 <article class=\"col-2 text-center\">
-                    <a href='perfil_detail.php?id=$id' target='_blank'><img class=\"img-fluid\" src=\"assets/img/entrada_utilizador/mais-s.png\" alt=\"\"></a>
+                    <a href='perfil_detail.php?id=$id'><img class=\"img-fluid\" src=\"assets/img/entrada_utilizador/mais-s.png\" alt=\"\"></a>
                 </article>
 
                 <article class=\"col-12\">
