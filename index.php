@@ -3,7 +3,17 @@
 
 <?php include_once "helpers/header.php";?>
 <body>
-   <?php include_once "scripts/check_autenticador.php"?>
+    <?php
+    session_start();
+    if(isset($_GET['msg'])){
+        switch($_GET['msg']){
+            case 'logout':
+                echo "<script>alert('Fez logout com sucesso!')</script>";
+        }
+    }
+
+    ?>
+
    <?php include_once "componentes/backgroundC.php"; ?>
 
     <?php include "componentes/logo.php"; ?>
