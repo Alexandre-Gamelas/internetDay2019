@@ -11,7 +11,7 @@
 
 
 
-<?php if(isset($_SESSION["nome"])){
+<?php if(!($pagina=="registar")){
         $paginaback="menu.php";
 
 }else{

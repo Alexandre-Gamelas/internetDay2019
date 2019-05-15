@@ -44,15 +44,16 @@ if (isset($_GET["role"])) {
 
             $link = new_db_connection();
             $stmt = mysqli_stmt_init($link);
-            $query = "INSERT INTO utilizadores (nome, apelido, pass, mail, linkdin, data_nascimento, ref_nacionalidades, role) VALUES (?, ?, ?, ?, ?, ?, $id_nac, 'estudante')";
+            $query = "INSERT INTO utilizadores (nome, apelido, pass, mail, linkdin, data_nascimento,fotografia, ref_nacionalidades, role) VALUES (?, ?, ?, ?, ?,?, ?, $id_nac, 'estudante')";
 
             if (mysqli_stmt_prepare($stmt, $query)) {
-                mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento);
+                mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento, $foto);
                 $nome = $_POST["nome"];
                 $apelido = $_POST["apelido"];
                 $mail = $_POST["mail"];
                 $linkdin = $_POST["linkdin"];
                 $nascimento = $_POST["nascimento"];
+                $foto=$_POST["fotografia"];
                 $password_cript = password_hash($_POST["pass"], PASSWORD_DEFAULT);
                 if (mysqli_stmt_execute($stmt)) {
                     echo "o";
@@ -162,15 +163,16 @@ if (isset($_GET["role"])) {
 
                 $link = new_db_connection();
                 $stmt = mysqli_stmt_init($link);
-                $query = "INSERT INTO utilizadores (nome, apelido, pass, mail, linkdin, data_nascimento, ref_nacionalidades, role) VALUES (?, ?, ?, ?, ?, ?, $id_nac, 'scout')";
+                $query = "INSERT INTO utilizadores (nome, apelido, pass, mail, linkdin, data_nascimento, fotografia, ref_nacionalidades, role) VALUES (?,?, ?, ?, ?, ?, ?, $id_nac, 'scout')";
 
                 if (mysqli_stmt_prepare($stmt, $query)) {
-                    mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento);
+                    mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $apelido, $password_cript, $mail, $linkdin, $nascimento, $foto);
                     $nome = $_POST["nome"];
                     $apelido = $_POST["apelido"];
                     $mail = $_POST["mail"];
                     $linkdin = $_POST["linkdin"];
                     $nascimento = $_POST["nascimento"];
+                    $foto=$_POST["fotografia"];
                     $password_cript = password_hash($_POST["pass"], PASSWORD_DEFAULT);
                     if(mysqli_stmt_execute($stmt)){
                         echo "o";

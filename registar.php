@@ -5,5 +5,6 @@
 <?php $pagina = "registar"; include_once "componentes/navbar.php" ?>
 
 <?php include_once "componentes/registarForm.php"; ?>
+<script src="js/registar_role.js"></script>
 </body>
 </html>
