@@ -26,7 +26,7 @@ if($_SESSION['role'] == "estudante"){
 
     $stmt = mysqli_stmt_init($link);
 //var_dump($link);
-    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome 
+    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome, utilizadores.fotografia 
                     FROM utilizadores
                     INNER JOIN estudantes
                     ON utilizadores.id_utilizadores = estudantes.ref_utilizadores
@@ -41,7 +41,7 @@ if($_SESSION['role'] == "estudante"){
         $mail = strtolower($_POST["mail"]);
         $password = $_POST["pass"];
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $curso, $universidade);
+        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $curso, $universidade, $foto);
         if (mysqli_stmt_fetch($stmt)) {
             if(password_verify($password, $password_hash)){
                 $_SESSION['id'] = $idRetornado;
@@ -51,6 +51,7 @@ if($_SESSION['role'] == "estudante"){
                 $_SESSION['linkdin'] = $linkdin;
                 $_SESSION['curso'] = $curso;
                 $_SESSION['universidade'] = $universidade;
+                $_SESSION["fotografia"]=$foto;
                 //var_dump($_SESSION);
                 header("Location: ../menu.php");
 
@@ -68,7 +69,7 @@ if($_SESSION['role'] == "estudante"){
 
     $stmt = mysqli_stmt_init($link);
 //var_dump($link);
-    $query = "       SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cargos.nome, empresas.nome
+    $query = "       SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cargos.nome, empresas.nome, utilizadores.fotografia
                     FROM utilizadores
                     INNER JOIN scouts
                     ON utilizadores.id_utilizadores = scouts.ref_utilizadores
@@ -83,7 +84,7 @@ if($_SESSION['role'] == "estudante"){
         $mail = strtolower($_POST["mail"]);
         $password = $_POST["pass"];
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $cargo, $empresa);
+        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $cargo, $empresa, $foto);
         if (mysqli_stmt_fetch($stmt)) {
             if(password_verify($password, $password_hash)){
                 $_SESSION['id'] = $idRetornado;
@@ -93,6 +94,7 @@ if($_SESSION['role'] == "estudante"){
                 $_SESSION['linkdin'] = $linkdin;
                 $_SESSION['cargo'] = $cargo;
                 $_SESSION['empresa'] = $empresa;
+                $_SESSION["fotografia"]=$foto;
                 //var_dump($_SESSION);
                 header("Location: ../menu.php");
 
