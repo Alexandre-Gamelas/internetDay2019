@@ -298,3 +298,27 @@ input[type="date"]:focus::before {
     margin: 0;
     padding: 10vh 0 10vh 0;
 }
+/********* DETAIL ************/
+.fas{
+    color: #FFDB58!important;
+}
+
+.fab{
+    color: #FFDB58!important;
+}
+
+.text-detail{
+    font-family: Poppins, sans-serif;
+    font-size: 5vmin;
+}
+a:link{
+    color: #FFDB58!important;
+}
+
+a:hover{
+    color: #FFB458 !important;
+    transition: 0.5s ease;
+}
+a:active{
+    color: #FFDB58!important;
+}
