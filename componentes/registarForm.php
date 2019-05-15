@@ -32,11 +32,11 @@
 
 <form class="form row justify-content-center" id="form_estudante" method="post"
       action="scripts/registar_script.php?role=1">
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="nome" placeholder="Nome*">
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="apelido" placeholder="Apelido*">
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="mail" placeholder="Mail*">
-    <input class="col-8 form-control inputRegistar mt-4" type="password" name="pass" placeholder="Password*">
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="linkdin" placeholder="LinkdIn*">
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="nome" placeholder="Nome*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="apelido" placeholder="Apelido*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="mail" placeholder="Mail*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="password" name="pass" placeholder="Password*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="linkdin" placeholder="LinkdIn*" required>
     <input class="col-8 form-control inputRegistar mt-4" type="text" placeholder="Link do Curriculo" name="curriculo">
     <input class="col-8 form-control inputRegistar mt-4" type="text" placeholder="Link da Fotografia" name="fotografia">
 
@@ -58,7 +58,7 @@
         mysqli_close($link);
 
         ?></select>
-    <input class="col-8 form-control inputRegistar mt-4" type="date" name="nascimento" placeholder="Nascimento*">
+    <input class="col-8 form-control inputRegistar mt-4" type="date" name="nascimento" placeholder="Nascimento*" required>
     <select class="col-8 form-control inputRegistar mt-4 data" name="nacionalidade" form="form_estudante">
         <option value="null">Nacionalidade</option>
         <?php
@@ -83,10 +83,10 @@
 
 
 <form class="form row justify-content-center" method="post" id="form_scout" action="scripts/registar_script.php?role=2">
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="nome" placeholder="Nome*">
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="apelido" placeholder="Apelido*">
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="mail" placeholder="Mail*">
-    <input class="col-8 form-control inputRegistar mt-4" type="password" name="pass" placeholder="Password*">
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="nome" placeholder="Nome*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="apelido" placeholder="Apelido*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="mail" placeholder="Mail*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="password" name="pass" placeholder="Password*" required>
     <input class="col-8 form-control inputRegistar mt-4" type="text" placeholder="Link da Fotografia" name="fotografia">
     <select class="col-8 form-control inputRegistar mt-4" type="text" name="empresa" form="form_scout">
         <option value="null">Empresa</option>
@@ -121,7 +121,7 @@
         }
         mysqli_close($link);
         ?></select>
-    <input class="col-8 form-control inputRegistar mt-4" type="text" name="linkdin" placeholder="LinkdIn*">
+    <input class="col-8 form-control inputRegistar mt-4" type="text" name="linkdin" placeholder="LinkdIn*" required>
     <input class="col-8 form-control inputRegistar mt-4" type="date" name="nascimento" placeholder="Nascimento*">
     <select class="col-8 form-control inputRegistar mt-4 data" name="nacionalidade" form="form_scout">
         <option value="null">Nacionalidade</option>

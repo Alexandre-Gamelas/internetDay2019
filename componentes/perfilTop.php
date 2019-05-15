@@ -1,6 +1,7 @@
 <?php
 if($_SESSION['role'] == 'estudante'){
     $nome = $_SESSION['nome'];
+    $apelido = $_SESSION['apelido'];
     $curso = $_SESSION['curso'];
     $universidade = $_SESSION['universidade'];
     echo "
@@ -10,7 +11,7 @@ if($_SESSION['role'] == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome</p>
+                <p class='userName'>$nome $apelido</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>
@@ -18,6 +19,7 @@ if($_SESSION['role'] == 'estudante'){
     ";
 } else if($_SESSION['role'] == 'scout'){
     $nome = $_SESSION['nome'];
+    $apelido = $_SESSION['apelido'];
     $curso = $_SESSION['empresa'];
     $universidade = $_SESSION['cargo'];
     echo "
@@ -27,7 +29,7 @@ if($_SESSION['role'] == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome</p>
+                <p class='userName'>$nome $apelido</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>
