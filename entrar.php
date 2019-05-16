@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php include_once "helpers/header.php";?>
-<body>
+<body style="max-height: 100vh; overflow: hidden">
     <?php session_start(); //esta página é especial, session start iniciad aqui para podermos saltar a pagina caso ja esteja logged in?>
     <?php include_once "componentes/backgroundC.php"; ?>
     <?php
