@@ -35,7 +35,8 @@
     <input class="col-8 form-control inputRegistar mt-4" type="text" name="nome" placeholder="Nome*" required>
     <input class="col-8 form-control inputRegistar mt-4" type="text" name="apelido" placeholder="Apelido*" required>
     <input class="col-8 form-control inputRegistar mt-4" type="text" name="mail" placeholder="Mail*" required>
-    <input class="col-8 form-control inputRegistar mt-4" type="password" name="pass" placeholder="Password*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="password" id="pass" name="pass" placeholder="Password*" required>
+    <input class="col-8 form-control inputRegistar mt-4" type="password" id="ver_pass" placeholder="Verificar Password*" required>
     <input class="col-8 form-control inputRegistar mt-4" type="text" name="linkdin" placeholder="LinkdIn">
     <input class="col-8 form-control inputRegistar mt-4" type="text" placeholder="Link do Curriculo" name="curriculo">
     <input class="col-8 form-control inputRegistar mt-4" type="text" placeholder="Link da Fotografia" name="fotografia">
@@ -78,7 +79,7 @@
         ?></select>
     </select>
     <article class="col-12"></article>
-    <button style="border-radius: 36px" class="col-4 mt-5 mb-5 p-2 inputRegistar" type="submit btn">REGISTAR</button>
+    <button style="border-radius: 36px" class="col-4 mt-5 mb-5 p-2 inputRegistar"  type="submit btn">REGISTAR</button>
 </form>
 
 

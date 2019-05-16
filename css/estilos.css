@@ -1,5 +1,10 @@
 *{
     /*font-family: "Pontano Sans";*/
+
+
+}
+body{
+    overflow-x: hidden ;
 }
 
 a:link{}
