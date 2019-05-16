@@ -26,7 +26,7 @@ if($_SESSION['role'] == "estudante"){
 
     $stmt = mysqli_stmt_init($link);
 //var_dump($link);
-    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome, utilizadores.fotografia 
+    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome, utilizadores.fotografia, estudantes.curriculo 
                     FROM utilizadores
                     INNER JOIN estudantes
                     ON utilizadores.id_utilizadores = estudantes.ref_utilizadores
@@ -41,7 +41,7 @@ if($_SESSION['role'] == "estudante"){
         $mail = strtolower($_POST["mail"]);
         $password = $_POST["pass"];
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $curso, $universidade, $foto);
+        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password_hash, $curso, $universidade, $foto, $curriculo);
         if (mysqli_stmt_fetch($stmt)) {
             if(password_verify($password, $password_hash)){
                 $_SESSION['id'] = $idRetornado;
@@ -52,6 +52,7 @@ if($_SESSION['role'] == "estudante"){
                 $_SESSION['curso'] = $curso;
                 $_SESSION['universidade'] = $universidade;
                 $_SESSION["fotografia"]=$foto;
+                $_SESSION["curriculo"]=$curriculo;
                 //var_dump($_SESSION);
                 header("Location: ../menu.php");
 
