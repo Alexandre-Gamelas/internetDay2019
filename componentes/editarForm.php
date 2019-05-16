@@ -1,5 +1,6 @@
 <?php
 require_once "connections/connection.php";
+session_start();
 $detail_id;
 $detail_nome;
 $detail_apelido;
@@ -35,7 +36,10 @@ if (mysqli_stmt_prepare($stmt, $query)) {
 }
 
 
-
+$linkdin = $_SESSION['linkdin'];
+$curriculo = $_SESSION['curriculo'];
+$fotografia = $_SESSION['fotografia'];
+$id = $_SESSION['id'];
 if($detail_role == "estudante"){
 
     $stmt = mysqli_stmt_init($link);
@@ -130,14 +134,48 @@ if($detail_role == 'estudante'){
                 <p class='userUni'>$universidade</p>
             </article>
         </section>
-        
+        <section class='row'>
+            <article class='col-12 text-center mt-5'>
+                <h4 style='font-family: Poppins, sans-serif'>Altera os teus dados!</h4>
+            </article>
+            
+        </section>
          <form class=\"form row justify-content-center\" id=\"form_estudante\" method=\"post\"
-      action=\"scripts/editar_script.php?role=1\">
-      <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" name=\"linkdin\" placeholder=\"LinkdIn\">
-    <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" placeholder=\"Link do Curriculo\" name=\"curriculo\">
-    <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" placeholder=\"Link da Fotografia\" name=\"fotografia\">
+      action=\"scripts/editar_script.php?role=estudante\">
+            <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" name=\"linkdin\" placeholder=\"LinkdIn\" value='$linkdin'>
+        <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" placeholder=\"Link do Curriculo\" name=\"curriculo\" value='$curriculo' >
+        <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" placeholder=\"Link da Fotografia\" name=\"fotografia\" value='$fotografia'>
+        <button class='col-5 inputRegistar mt-4 p-2' type='submit'>Alterar!</button>
       </form>
     ";
 
-
+} else if($detail_role == 'scout'){
+    $nome = $detail_nome;
+    $curso = $detail_empresa;
+    $universidade = $detail_cargo;
+    echo "
+        <section class='row justify-content-center'>
+            <article class='col-12 text-center' style='max-height: 12.5vh'>
+                <img src='$detail_foto' class='userImg'>
+            </article>
+        
+            <article class='col-12 text-center user'>
+                <p class='userName'>$nome</p>
+                <p class='userCurso'>$curso</p>
+                <p class='userUni'>$universidade</p>
+            </article>
+        </section>
+        <section class='row'>
+            <article class='col-12 text-center mt-5'>
+                <h4 style='font-family: Poppins, sans-serif'>Altere os seus dados!</h4>
+            </article>
+            
+        </section>
+         <form class=\"form row justify-content-center\" id=\"form_estudante\" method=\"post\"
+      action=\"scripts/editar_script.php?role=scout\">
+            <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" name=\"linkdin\" placeholder=\"LinkdIn\" value='$linkdin'>
+        <input class=\"col-8 form-control inputRegistar mt-4\" type=\"text\" placeholder=\"Link da Fotografia\" name=\"fotografia\" value='$fotografia'>
+        <button class='col-5 inputRegistar mt-4 p-2' type='submit'>Alterar!</button>
+      </form>
+    ";
 }

@@ -4,7 +4,7 @@
 <body>
 <?php session_start(); ?>
 <?php $pagina = " "; include_once "componentes/navbar.php" ?>
-<?php $detail_id = $_GET['id'];
+<?php $detail_id = $_SESSION['id'];
 include_once "componentes/editarForm.php";
 ?>
 </body>
