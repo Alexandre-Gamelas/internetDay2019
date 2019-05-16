@@ -18,9 +18,11 @@ $('#qrcode').click(function () {
 
     Instascan.Camera.getCameras().then(cameras =>
     {
-        if(cameras.length > 0){
+        if(cameras.length > 1){
             scanner.start(cameras[1]); //1 para telemovel, 0 para computador
-        } else {
+        } else if(cameras.length == 1){
+        scanner.start(cameras[0]);
+    } else {
             console.error("Não existe câmera no dispositivo!");
         }
     });

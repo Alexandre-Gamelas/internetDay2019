@@ -14,6 +14,7 @@ $detail_mail;
 $detail_curriculo;
 $detail_site;
 $detail_foto;
+$detail_data;
 
 
 $link = new_db_connection();
@@ -41,7 +42,7 @@ if($detail_role == "estudante"){
 
     $stmt = mysqli_stmt_init($link);
 //var_dump($link);
-    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome, utilizadores.fotografia, utilizadores.mail, estudantes.curriculo, utilizadores.fotografia
+    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome, utilizadores.fotografia, utilizadores.mail, estudantes.curriculo, utilizadores.fotografia, utilizadores.data_nascimento
                     FROM utilizadores
                     INNER JOIN estudantes
                     ON utilizadores.id_utilizadores = estudantes.ref_utilizadores
@@ -55,7 +56,7 @@ if($detail_role == "estudante"){
         mysqli_stmt_bind_param($stmt, 'i', $id);
         $id = $detail_id;
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password, $curso, $universidade, $foto, $mail, $curriculo, $foto);
+        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password, $curso, $universidade, $foto, $mail, $curriculo, $foto, $data);
         if (mysqli_stmt_fetch($stmt)) {
 
                 $detail_id = $idRetornado;
@@ -65,9 +66,12 @@ if($detail_role == "estudante"){
                 $detail_linkdin = $linkdin;
                 $detail_curso = $curso;
                 $detail_universidade = $universidade;
-                $detail_foto = $foto;
+                if($foto != null){
+                    $detail_foto = $foto;
+                }
                 $detail_mail = $mail;
                 $detail_curriculo=$curriculo;
+                $detail_data = $data;
         }
         mysqli_stmt_close($stmt);
         mysqli_close($link);
@@ -77,7 +81,7 @@ if($detail_role == "estudante"){
 
     $stmt = mysqli_stmt_init($link);
 //var_dump($link);
-    $query = "       SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cargos.nome, empresas.nome, utilizadores.fotografia, utilizadores.mail, empresas.website, utilizadores.fotografia
+    $query = "       SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cargos.nome, empresas.nome, utilizadores.fotografia, utilizadores.mail, empresas.website, utilizadores.fotografia, utilizadores.data_nascimento;
                     FROM utilizadores
                     INNER JOIN scouts
                     ON utilizadores.id_utilizadores = scouts.ref_utilizadores
@@ -91,7 +95,7 @@ if($detail_role == "estudante"){
         mysqli_stmt_bind_param($stmt, 'i', $id);
         $id = $detail_id;
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password, $cargo, $empresa, $foto, $mail, $site, $foto);
+        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password, $cargo, $empresa, $foto, $mail, $site, $foto, $data);
         if (mysqli_stmt_fetch($stmt)) {
 
                 $detail_id = $idRetornado;
@@ -107,6 +111,7 @@ if($detail_role == "estudante"){
                 if($foto != null){
                     $detail_foto = $foto;
                 }
+                $detail_data = $data;
 
         }
         mysqli_stmt_close($stmt);
@@ -123,6 +128,11 @@ if($detail_foto != null || (strpos($fotografia, '.png')) !== false){
     $fotografia = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png';
 }
 
+$date = new DateTime($_SESSION['data']);
+$now = new DateTime();
+$interval = $now->diff($date);
+$age = $interval->y;
+
 
 if($detail_role == 'estudante'){
     $nome = $detail_nome;
@@ -135,7 +145,7 @@ if($detail_role == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome</p>
+                <p class='userName'>$nome, $age</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>
@@ -188,7 +198,7 @@ if($detail_role == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome</p>
+                <p class='userName'>$nome, $age</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>

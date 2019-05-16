@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php include_once "helpers/header.php";?>
-<body>
+<body style="max-height: 100vh; overflow: hidden">
     <?php
         session_start();
         include_once "scripts/checkin.php"

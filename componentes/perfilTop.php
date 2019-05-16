@@ -6,6 +6,11 @@ if(isset($_SESSION['fotografia'])){
     $fotografia = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png';
 }
 
+$date = new DateTime($_SESSION['data']);
+$now = new DateTime();
+$interval = $now->diff($date);
+$age = $interval->y;
+
 if($_SESSION['role'] == 'estudante'){
     $nome = $_SESSION['nome'];
     $apelido = $_SESSION['apelido'];
@@ -18,7 +23,7 @@ if($_SESSION['role'] == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome $apelido</p>
+                <p class='userName'>$nome $apelido, $age</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>
@@ -36,7 +41,7 @@ if($_SESSION['role'] == 'estudante'){
             </article>
         
             <article class='col-12 text-center user'>
-                <p class='userName'>$nome $apelido</p>
+                <p class='userName'>$nome $apelido, $age</p>
                 <p class='userCurso'>$curso</p>
                 <p class='userUni'>$universidade</p>
             </article>

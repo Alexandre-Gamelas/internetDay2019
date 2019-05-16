@@ -283,11 +283,15 @@ input[type="date"]:focus::before {
 
 #qrClose{
     position: absolute;
-    bottom: -1vh;
-    left: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 10%);
     z-index: +1000;
-    width: 100vw;
+    width: 40vw;
     background: linear-gradient(to right, #ffeba4 0%,#ffdb58 100%);
+    color: black;
+    font-weight: lighter;
+    font-family: Poppins, sans-serif;
 }
 
 .videoCaixa{
