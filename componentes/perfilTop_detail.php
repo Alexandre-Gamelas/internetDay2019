@@ -117,7 +117,7 @@ if($detail_role == "estudante"){
 }
 
 $fotografia;
-if($detail_foto != null){
+if($detail_foto != null || (strpos($fotografia, '.png')) !== false){
     $fotografia = $detail_foto;
 } else {
     $fotografia = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png';

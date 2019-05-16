@@ -4,7 +4,7 @@
     $link = new_db_connection(); // Create a new DB connection
     $stmt = mysqli_stmt_init($link); // create a prepared statement
     $query = "  
-                SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, cursos.nome, universidades.nome
+                SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, cursos.nome, universidades.nome, utilizadores.fotografia
                     FROM utilizadores
                     INNER JOIN estudantes
                     ON utilizadores.id_utilizadores = estudantes.ref_utilizadores
@@ -23,9 +23,12 @@
         $idBind = $_SESSION['id'];
 
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $curso, $universidade); // Bind results
+        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $curso, $universidade, $fotografia); // Bind results
         while(mysqli_stmt_fetch($stmt)){
-            renderScanados1($nome, $apelido, $linkdin, $curso, $universidade, $idRetornado);
+            if($fotografia != null){
+                $fotografiaSend = $fotografia;
+            }
+            renderScanados1($nome, $apelido, $linkdin, $curso, $universidade, $idRetornado, $fotografiaSend);
         }
     } else {
         echo "erro 1";
@@ -36,7 +39,7 @@
      $link = new_db_connection(); // Create a new DB connection
      $stmt = mysqli_stmt_init($link); // create a prepared statement
      $query = "  
-                SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, cargos.nome, empresas.nome
+                SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, cargos.nome, empresas.nome, utilizadores.fotografia
                     FROM utilizadores
                     INNER JOIN scouts
                     ON utilizadores.id_utilizadores = scouts.ref_utilizadores
@@ -55,9 +58,11 @@
          $idBind = $_SESSION['id'];
 
          mysqli_stmt_execute($stmt);
-         mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $cargo, $empresa); // Bind results
+         mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $cargo, $empresa, $fotografia); // Bind results
          while(mysqli_stmt_fetch($stmt)){
-             renderScanados2($nome, $apelido, $linkdin, $cargo, $empresa,$idRetornado);
+             if($fotografia != null)
+                 $fotografiaSend = $fotografia;
+             renderScanados2($nome, $apelido, $linkdin, $cargo, $empresa,$idRetornado, $fotografiaSend);
          }
      } else {
          echo "erro 1";
@@ -66,11 +71,11 @@
 
  }
 
-function renderScanados1($nome, $apelido, $linkdin, $curso, $universidade, $id){
+function renderScanados1($nome, $apelido, $linkdin, $curso, $universidade, $id, $fotografia){
     echo "
             <section class=\"row align-items-center justify-content-center\">
                 <article class=\"col-2 text-center\" style=\"border-radius: 50%; border: 1px solid transparent\">
-                    <img class=\"img-fluid\" src=\"assets/img/entrada_utilizador/teste.jpg\" style=\"border-radius: 50%; border: 1px solid transparent\">
+                    <img class=\"img-fluid\" src='$fotografia' style=\"border-radius: 50%; border: 1px solid transparent\">
                 </article>
 
                 <article class=\"col-7\">
@@ -89,11 +94,11 @@ function renderScanados1($nome, $apelido, $linkdin, $curso, $universidade, $id){
        ";
 }
 
-function renderScanados2($nome, $apelido, $linkdin, $cargo, $empresa, $id){
+function renderScanados2($nome, $apelido, $linkdin, $cargo, $empresa, $id, $fotografia){
     echo "
             <section class=\"row align-items-center justify-content-center\">
                 <article class=\"col-2 text-center\" style=\"border-radius: 50%; border: 1px solid transparent\">
-                    <img class=\"img-fluid\" src=\"assets/img/entrada_utilizador/teste.jpg\" style=\"border-radius: 50%; border: 1px solid transparent\">
+                    <img class=\"img-fluid\" src='$fotografia' style=\"border-radius: 50%; border: 1px solid transparent\">
                 </article>
 
                 <article class=\"col-7\">

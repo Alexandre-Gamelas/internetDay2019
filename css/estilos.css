@@ -327,3 +327,7 @@ a:hover{
 a:active{
     color: #FFDB58!important;
 }
+
+.color_id{
+    color: #FFDB58
+}
