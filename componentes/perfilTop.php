@@ -1,4 +1,11 @@
 <?php
+$fotografia;
+if(isset($_SESSION['fotografia'])){
+    $fotografia = $_SESSION['fotografia'];
+} else {
+    $fotografia = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png';
+}
+
 if($_SESSION['role'] == 'estudante'){
     $nome = $_SESSION['nome'];
     $apelido = $_SESSION['apelido'];
@@ -7,7 +14,7 @@ if($_SESSION['role'] == 'estudante'){
     echo "
         <section class='row justify-content-center'>
             <article class='col-12 text-center' style='max-height: 12.5vh'>
-                <img src='assets/img/entrada_utilizador/teste.jpg' class='userImg'>
+                <img class='userImg' src='$fotografia'>
             </article>
         
             <article class='col-12 text-center user'>
@@ -25,7 +32,7 @@ if($_SESSION['role'] == 'estudante'){
     echo "
         <section class='row justify-content-center'>
             <article class='col-12 text-center' style='max-height: 12.5vh'>
-                <img src='assets/img/entrada_utilizador/teste.jpg' class='userImg'>
+                <img class='userImg' src='$fotografia'>
             </article>
         
             <article class='col-12 text-center user'>

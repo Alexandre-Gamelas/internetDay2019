@@ -11,7 +11,7 @@ $('#qrcode').click(function () {
     $('#janelaQr').addClass('fadeInDown');
 
     scanner.addListener('scan', function(content) {
-        alert('Scannou o utilizador: ' + content)
+        alert('Scannou com sucesso!');
         window.location.href = 'scripts/qrAdd.php?id=' + content
 
     });

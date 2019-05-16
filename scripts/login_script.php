@@ -94,7 +94,9 @@ if($_SESSION['role'] == "estudante"){
                 $_SESSION['linkdin'] = $linkdin;
                 $_SESSION['cargo'] = $cargo;
                 $_SESSION['empresa'] = $empresa;
-                $_SESSION["fotografia"]=$foto;
+                if($foto != null){
+                    $_SESSION["fotografia"]=$foto;
+                }
                 //var_dump($_SESSION);
                 header("Location: ../menu.php");
 

@@ -109,7 +109,12 @@ if($detail_role == "estudante"){
 
 }
 
-
+$fotografia;
+if(isset($_SESSION['fotografia'])){
+    $fotografia = $detail_foto;
+} else {
+    $fotografia = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png';
+}
 
 
 if($detail_role == 'estudante'){
@@ -119,7 +124,7 @@ if($detail_role == 'estudante'){
     echo "
         <section class='row justify-content-center'>
             <article class='col-12 text-center' style='max-height: 12.5vh'>
-                <img src='$detail_foto' class='userImg'>
+                <img src='$fotografia' class='userImg'>
             </article>
         
             <article class='col-12 text-center user'>
@@ -172,7 +177,7 @@ if($detail_role == 'estudante'){
     echo "
         <section class='row justify-content-center'>
             <article class='col-12 text-center' style='max-height: 12.5vh'>
-                <img src='$detail_foto' class='userImg'>
+                <img src='$fotografia' class='userImg'>
             </article>
         
             <article class='col-12 text-center user'>

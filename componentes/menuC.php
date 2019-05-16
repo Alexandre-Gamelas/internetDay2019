@@ -42,3 +42,9 @@
         echo "<p id='qrTexto' class='d-none'>".$_SESSION['id']."</p>";
     }
 ?>
+
+<section class="row fixed-bottom">
+    <article class="col-12 text-right pr-3">
+        <a href="scripts/logout.php"><i class="fas fa-times fa-2x pr-3 pb-1" style="color: #FFDB58"></i></a>
+    </article>
+</section>
