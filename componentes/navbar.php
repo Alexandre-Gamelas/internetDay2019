@@ -8,17 +8,8 @@
 
     <div class="navbar-layer-preto" ></div>
 
-
-
-
-<?php if(!($pagina=="registar")){
-        $paginaback="menu.php";
-
-}else{
-    $paginaback="index.php";
-}?>
     <div class="collapse navbar-collapse" id="navbarsExample02">
-        <a class="navbar-brand pl-4" href="<?=$paginaback?>"> <img class="icon_back" src="assets/img/navbar/back-arrow.svg"></a>
+        <a class="navbar-brand pl-4" href="#" onclick="history.go(-1);"> <img class="icon_back" src="assets/img/navbar/back-arrow.svg"></a>
         <ul class="navbar-nav m-auto">
             <li class="nav-item active">
                 <a class="nav-link nav-texto pos-center" href="#"> <?php if(isset($pagina)) echo $pagina ?> </a>

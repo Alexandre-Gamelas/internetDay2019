@@ -3,7 +3,7 @@ require_once "../connections/connection.php";
 if (isset($_GET["role"])) {
     $role = $_GET["role"];
     if ($role == 1) {
-        if ((isset($_POST["nome"])) && (isset($_POST["apelido"])) && (isset($_POST["pass"])) && (isset($_POST["mail"])) && (isset($_POST["linkdin"]))) {
+        if ((isset($_POST["nome"])) && (isset($_POST["apelido"])) && (isset($_POST["pass"])) && (isset($_POST["mail"]))) {
             $link = new_db_connection();
             $stmt = mysqli_stmt_init($link);
             $query = "SELECT  id_nacionalidades  FROM nacionalidades WHERE nacionalidades.nome LIKE ? ";
