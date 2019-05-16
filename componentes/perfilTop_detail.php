@@ -11,6 +11,7 @@ $detail_curso;
 $detail_universidade;
 $detail_foto;
 $detail_mail;
+$detail_curriculo;
 $detail_site;
 
 
@@ -39,7 +40,7 @@ if($detail_role == "estudante"){
 
     $stmt = mysqli_stmt_init($link);
 //var_dump($link);
-    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome, utilizadores.fotografia, utilizadores.mail
+    $query = "          SELECT utilizadores.nome, utilizadores.apelido, utilizadores.linkdin, utilizadores.id_utilizadores, utilizadores.role, utilizadores.pass, cursos.nome, universidades.nome, utilizadores.fotografia, utilizadores.mail, estudantes.curriculo
                     FROM utilizadores
                     INNER JOIN estudantes
                     ON utilizadores.id_utilizadores = estudantes.ref_utilizadores
@@ -53,7 +54,7 @@ if($detail_role == "estudante"){
         mysqli_stmt_bind_param($stmt, 'i', $id);
         $id = $detail_id;
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password, $curso, $universidade, $foto, $mail);
+        mysqli_stmt_bind_result($stmt, $nome, $apelido, $linkdin, $idRetornado, $role,$password, $curso, $universidade, $foto, $mail, $curriculo);
         if (mysqli_stmt_fetch($stmt)) {
 
                 $detail_id = $idRetornado;
@@ -65,6 +66,7 @@ if($detail_role == "estudante"){
                 $detail_universidade = $universidade;
                 $detail_foto = $foto;
                 $detail_mail = $mail;
+                $detail_curriculo=$curriculo;
         }
         mysqli_stmt_close($stmt);
         mysqli_close($link);
@@ -100,7 +102,7 @@ if($detail_role == "estudante"){
                 $detail_empresa = $empresa;
                 $detail_foto = $foto;
                 $detail_mail = $mail;
-                $detail_site;
+                $detail_site=$site;
         }
         mysqli_stmt_close($stmt);
         mysqli_close($link);
@@ -151,7 +153,7 @@ if($detail_role == 'estudante'){
         </section>
         </a>
         
-         <a href='$detail_mail' target='blank'>
+         <a href='$detail_curriculo' target='blank'>
         <section class='row justify-content-center align-items-center'>
             <article class='col-2 text-center p-0'>
                 <i class='fas fa-address-card fa-3x text-center'></i>
@@ -204,17 +206,7 @@ if($detail_role == 'estudante'){
         </section>
         </a>
         
-         <a href='$detail_mail' target='blank'>
-        <section class='row justify-content-center align-items-center'>
-            <article class='col-2 text-center p-0'>
-                <i class='fas fa-address-card fa-3x text-center'></i>
-            </article>
-            <article class='col-8 text-detail'>Curriculo</article>
-            <article class='col-12'>
-                <hr class='img-fluid'>
-            </article>
-        </section>
-        </a>
+         
         
          <a href='$detail_site' target='blank'>
         <section class='row justify-content-center align-items-center'>
