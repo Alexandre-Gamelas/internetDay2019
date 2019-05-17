@@ -128,7 +128,7 @@ if($detail_foto != null || (strpos($fotografia, '.png')) !== false){
     $fotografia = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png';
 }
 
-$date = new DateTime($_SESSION['data']);
+$date = new DateTime($detail_data);
 $now = new DateTime();
 $interval = $now->diff($date);
 $age = $interval->y;

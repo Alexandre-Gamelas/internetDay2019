@@ -17,6 +17,19 @@ if($_SESSION['role']=='estudante') {
             WHERE utilizadores.id_utilizadores = ?";
     $nome = 'Universidade';
 
+    if (mysqli_stmt_prepare($stmt, $query)) {
+        mysqli_stmt_bind_param($stmt, 's', $id);
+        $id = $_SESSION['id'];
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $foto);
+            if (mysqli_stmt_fetch($stmt)) {
+                $instituicao = $foto;
+            }
+        }
+    } else {
+        echo mysqli_stmt_error($stmt);
+    }
+
 } else if($_SESSION['role']=='scout'){
     $query = "  SELECT logotipo, empresas.nome FROM empresas
             INNER JOIN scouts
@@ -24,21 +37,23 @@ if($_SESSION['role']=='estudante') {
             INNER JOIN utilizadores
             ON scouts.ref_utilizadores = utilizadores.id_utilizadores
             WHERE utilizadores.id_utilizadores = ?";
+
+    if (mysqli_stmt_prepare($stmt, $query)) {
+        mysqli_stmt_bind_param($stmt, 's', $id);
+        $id = $_SESSION['id'];
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $foto, $nomeEmpresa);
+            if (mysqli_stmt_fetch($stmt)) {
+                $instituicao = $foto;
+                $nome = $nomeEmpresa;
+            }
+        }
+    } else {
+        echo mysqli_stmt_error($stmt);
+    }
 }
 
-if (mysqli_stmt_prepare($stmt, $query)) {
-    mysqli_stmt_bind_param($stmt, 's', $id);
-    $id = $_SESSION['id'];
-    if (mysqli_stmt_execute($stmt)) {
-        mysqli_stmt_bind_result($stmt, $foto, $nomeEmpresa);
-        if (mysqli_stmt_fetch($stmt)) {
-            $instituicao = $foto;
-            $nome = $nomeEmpresa;
-        }
-    }
-} else {
-    echo mysqli_stmt_error($stmt);
-}
+
 
 mysqli_stmt_close($stmt);
 mysqli_close($link);
